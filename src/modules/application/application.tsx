@@ -28,20 +28,16 @@ export function Application() {
   ]);
   useEffect(() => map.setLayers(layers), [layers]);
 
-
   const mapRef = useRef() as MutableRefObject<HTMLDivElement>;
-
 
   useEffect(() => map.setTarget(mapRef.current), []);
   return (
-      <MapContext.Provider value={{ map, layers, setLayers }}>
-        <div className="container">
-          <header className={"header"}>
-            <h1>
-              Map Prep
-            </h1>
-          </header>
-        </div>
+    <MapContext.Provider value={{ map, layers, setLayers }}>
+      <div className="container">
+        <header className={"header"}>
+          <h1>Map Prep</h1>
+        </header>
+      </div>
       <nav className="container">
         <a href={"#"} onClick={handleFocusUser}>
           Focus on me
